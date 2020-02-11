@@ -1,0 +1,31 @@
+
+<div class="container">
+  <h1>List of all tasks</h1>
+
+  <div>
+    <% @tasks.each do |task| %>
+      <div class="card-body border rounded my-2 align-items-center bg-light d-flex justify-content-between" style="max-height: 1rem;">
+        <div class="d-flex">
+          <div>
+            <% if task.completed %>
+              <p class="m-0">[X]</p>
+            <% else %>
+              <p class="m-0">[ ]</p>
+            <% end %>
+          </div>
+
+          <div>
+            <p class="m-0"><%= link_to task.title, task_path(task) %></p>
+          </div>
+        </div>
+
+        <div>
+          <button type="button" class="btn btn-danger text-white"><%= link_to "Delete", task_delete_path(task), method: :delete %>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+
+  <button type="button" class="btn btn-dark"><%= link_to "+ Add a new task", tasks_new_path %>
+</div>

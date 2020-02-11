@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h1>New task</h1>
+    <button type="button" class="btn btn-dark" style="max-height: 40px;"><%= link_to "Back to list", tasks_path %>
+  </div>
+
+  <%= simple_form_for(@task) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :details %>
+    <%= f.submit %>
+  <% end %>
+
+</div>

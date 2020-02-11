@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h1>New task</h1>
+    <button type="button" class="btn btn-dark" style="max-height: 40px;"><%= link_to "Back to list", tasks_path %>
+  </div>
+
+  <div class="card-body border rounded my-2 align-items-center bg-light">
+    <h2> <%= @task.details %></em></h2>
+
+    <% if @task.completed %>
+      <p><em>[X] Task is completed</em></p>
+    <% else %>
+      <p><em>[ ] This task is not completed yet</em></p>
+    <% end %>
+
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-info"><%= link_to "Edit this task", task_edit_path(@task), method: :post %>
+  </div>
+
+</div>
